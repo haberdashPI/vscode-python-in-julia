@@ -1,0 +1,36 @@
+{
+	"scopeName": "julia.python.codeblock",
+	"injectionSelector": "L:string.quoted.other",
+	"patterns": [
+		{ "include": "#python_code_block" },
+		{ "include": "#python_code_string" }
+	],
+	"repository": {
+        "python_code_string": {
+			"begin": "(?<=py\")([^\"]|$)",
+			"end": "(.|^)(?=\")",
+            "name": "variable.python.string",
+            "patterns": [
+				{ "include": "#escaped_python_string"},
+                { "include": "source.julia#string_dollar_sign_interpolate" },
+                { "include": "source.python" }
+            ]
+		},
+		"python_code_block": {
+			"begin": "(?<=py(\"\"\"))(.|$)",
+			"beginCaptures": {
+				"1": "punctuation.definition.string.begin.julia"
+			},
+			"end": "^[ \t]*(?=\"\"\")",
+			"endCaptures": {
+				"2": "punctuation.definition.string.end.julia"
+			},
+			"name": "variable.python.block.string",
+			"patterns": [
+                { "include": "source.julia#string_dollar_sign_interpolate" },
+				{ "include": "source.python" }
+			]
+		}
+	}
+}
+

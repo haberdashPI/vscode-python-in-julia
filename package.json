@@ -1,0 +1,41 @@
+{
+    "name": "python-in-julia",
+    "displayName": "Embedded Python in Julia",
+    "description": "Syntax highlighting for python code embedded in Julia via PyCall.jl",
+    "version": "0.1.0",
+    "publisher": "haberdashPI",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "keywords": [
+        "Julia", "MATLAB"
+    ],
+    "contributes": {
+        "grammars": [
+            {
+                "scopeName": "julia.python.codeblock",
+                "path": "./syntaxes/codeblock.json",
+                "injectTo": [
+                    "source.julia"
+                ],
+                "embeddedLanguages": {
+                    "variable.matlab.block.string": "python"
+                },
+                "tokenTypes": {
+                    "variable.matlab.block.string": "other",
+                    "variable.matlab.string": "other"
+                }
+            }
+          ]
+    },
+    "extensionDependencies": [
+        "julialang.language-julia"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/haberdashPI/vscode-python-in-julia"
+    }
+}
