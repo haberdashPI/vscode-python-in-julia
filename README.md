@@ -1,4 +1,4 @@
-# Markdown Julia for VS Code
+# Python in Julia 
 
 [Python](https://www.python.org/) syntax highlighting
 inside [Julia](http://julialang.org) within
